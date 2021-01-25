@@ -1,0 +1,44 @@
+body{
+    height: 100vh;
+}
+main{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    form{
+        display: grid;
+        grid-template-columns:  40% 45% 15%;
+        grid-template-rows: repeat(4, auto());
+        row-gap: 10px;
+        column-gap: 10px;
+        #nemamUcet{
+            display: flex;
+            grid-column: auto / span 2;
+            align-items: center;
+            justify-content: center;
+            a{
+                margin-left: 10px;
+                text-decoration: none;
+            }
+        }
+        input{
+            border-radius: 5px;
+        }
+        button{
+            opacity: .7;
+            transition: 0.3s;
+            font-family: pixel;
+            font-size: 20px;
+            background: #CFFFB3;
+            padding: 10px;
+            grid-column: auto / span 2;
+            border-radius: 5px;
+        }
+        button:hover{
+            opacity: 1;
+        }
+        label{
+            font-family: pixel;
+        }
+    }
+}

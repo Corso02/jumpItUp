@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jump It Up</title>
+    <link rel="stylesheet" href="style/index.css">
+    <script src="scripts/index.js"></script>
+</head>
+<body>
+    <header>
+        <a id="about" class="headerBtn">About</a>
+        <a id="nazov">Jump it up</a>
+        <a id="login" class="headerBtn">Login</a>
+        <a id='sign up' class="headerBtn">Sign up</a>
+    </header>
+    
+    <!--
+        nacitam si fonty 
+    -->
+    <style media="screen" type="text/css">
+        @font-face{
+            font-family: pixel;
+            src: url('font/SF Pixelate.ttf');
+        }
+        @font-face {
+            font-family: pixelBold;
+            src: url('font/SF Pixelate Bold.ttf');
+        }
+    </style>
+
+    <main>
+        <div id="lavyOkraj">
+            <p>Lavy okraj, tu budu informacie o updatoch</p>
+        </div>
+        
+        <div id="spustitHruBtn">
+            <h1 onclick="spustenieHry()">Spustit hru</h1>
+        </div>
+
+        <div style="font-family: pixel; position: absolute; left: -1000px; visibility: hidden;">.</div>
+        <div style="font-family: pixelBold; position: absolute; left: -1000px; visibility: hidden;">.</div>
+    <div id="hra">
+        
+        <script src="phaser.js"></script>
+        <script src="hlavneMenu.js"></script>
+        <script src="pauseMenu.js"></script>
+        <script src="deathScreen.js"></script>
+        <script src="winScreen.js"></script>
+        <script src="level1.js"></script>
+        <script src="game.js"></script>
+        <script src="metody.js"></script>
+        <script src="pohybHraca.js"></script>
+       </div>
+
+       <div id="pravyOkraj">
+            <p>Tu budu komenty a recenzie od pouzivatelov</p>
+       </div>
+    </main>
+    <footer>
+        <p>Made by Peter Vanat</p>
+    </footer>
+</body>
+</html>

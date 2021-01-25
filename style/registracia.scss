@@ -1,0 +1,57 @@
+body{
+    height: 100vh;
+}
+main{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    #formular{
+        width: 50vw;
+        justify-self: center;
+        form{
+            display: grid;
+            grid-template-columns: 25% 45% 30%;
+            grid-template-rows: repeat(6, auto());
+            row-gap: 10px;
+            column-gap: 10px;
+            label{
+                font-family: pixel;
+            }
+            span{
+                font-size: 14px;
+            }
+            #mamUcet{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                grid-column: auto / span 3;
+                font-family: pixel;
+                a{
+                    margin-left: 10px;
+                    text-decoration: none;
+                }
+            }
+            input{
+                border-radius: 5px;
+            }
+            button{
+                width: 50%;
+                opacity: .7;
+                font-family: pixel;
+                font-size: 20px;
+                background: #CFFFB3;
+                padding: 10px;
+                grid-column: auto / span 3;
+                border-radius: 5px;
+                transition: 0.3s;
+                justify-self: center;
+            }
+            button:hover{
+                opacity: 1;
+            }
+        }
+        #uspesnaRegistracia{
+            text-align: center;
+        }
+    }
+}

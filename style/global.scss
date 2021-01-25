@@ -1,0 +1,91 @@
+@font-face{
+    font-family: pixel;
+    src: url('./font/SF Pixelate.ttf');
+}
+@font-face {
+    font-family: pixelBold;
+    src: url('./font/SF Pixelate Bold.ttf');
+}
+body{
+    margin: 0;
+    padding: 0;
+    display: grid;
+    height: 100vh;
+    overflow: hidden;
+    @media screen and (max-width: 1400px) {
+        grid-template-rows: 15% 75% 10%;
+    }
+    @media screen and (min-width: 1400px){
+       grid-template-rows: 10% 80% 10%;    
+    }
+    header{
+        padding: 25px;
+        background-color: #FCA14E;
+        display: grid;
+        grid-template-columns: 30% 40% 15% 15%;
+        position: relative;
+        top: 0px;
+        .headerBtn{
+            color: #271033;
+            font-size: 18px;
+            justify-self: center;
+            align-self: center;
+            padding: 10px;
+            font-family: pixel;
+            @media screen and (min-width: 1400px){
+                font-size: 22px;
+            }
+        }   
+        .headerBtn:hover{
+            background-color: #CFFFB3;
+        }   
+        #nazov{
+            color: #271033;
+            font-size: 36px;
+            justify-self: center;
+            font-family: pixelBold;
+        }
+        a{
+            text-decoration: none;
+        }
+    }
+
+    #popUpPreklikKomentar{
+        position: absolute;
+        @media screen and (max-height: 640px) {
+            top: 12vh;
+            right: 18vw;
+        }
+        @media screen and (min-height: 640px) {
+            top: 9vh;
+            right: 19vw;
+        }
+        display: none;
+        a{
+            //justify-self: center;
+            padding: 5px;
+            border-radius: 7px;
+            background: #CFFFB3;
+            margin-top: 5px;
+            text-decoration: none;
+            font-family: pixel;
+        }
+    }
+
+    footer{
+        background-color: #FCA14E;
+        display: grid;
+        position: sticky;
+        left: 0;
+        bottom: 0;
+        justify-self: center;
+        width: 100%;
+        height: 10vh;
+        p{
+            justify-self: center;
+            font-weight: bold;
+            font-size: 26px;
+            align-self: center;
+        }
+    }
+}

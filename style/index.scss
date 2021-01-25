@@ -1,0 +1,105 @@
+
+body{
+    overflow: hidden; /* Hide scrollbars */
+    height: 100vh;
+    main{
+        //overflow: auto;
+        display: grid;
+        grid-template-columns: 15% 71% 14%;
+        height: 100%;
+        #lavyOkraj{
+            overflow: auto;
+            background-color: #6B717E;
+            display: grid;
+            height: 100%;
+            #nazov{
+                color: rgb(255, 255, 255);
+                font-family: pixel;
+            }
+            p{
+                font-family: pixel;
+                color: white;
+            }
+        }
+        #pravyOkraj{
+            background-color: #6B717E;
+            display: grid;
+            grid-template-rows: 30% 30% 30% 10%;
+            color: white;
+            #ziadneKomentare{
+                justify-self: center;
+                align-self: center;
+                font-size: 16px;
+            }
+            .koment{
+                margin-bottom: 3px;
+            }
+            span{
+                margin-left: 5px;
+            }
+            p{
+                margin-left: 5px;
+            }
+            .recenzia{
+                border-bottom: 1px solid black;
+            }
+            #preklikNaVsetkyRecenzie{
+                text-decoration: none;
+                justify-self: center;
+                align-self: center;
+                color: black;
+                padding: 5px;
+                border-radius: 5px;
+            }
+            #preklikNaVsetkyRecenzie:hover{
+                background: #CFFFB3;
+            }
+        }
+        #spustitHruBtn{
+            display: grid;
+            h1{
+               justify-self: center;
+               align-self: center;
+               padding: 20px;
+            }
+            h1:hover{
+                background-color: #CFFFB3;
+            }
+        }
+        #hra{
+            display: none;
+        }
+        #overlay-box{
+            position: fixed;
+            display: none;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            z-index: 2;
+            #overlay{
+                background-image: url("/tiu/rop-respo/images/background.png");
+                position: absolute;
+                width: 50%;
+                height: 50%;
+                top: 25%;
+                left: 25%;
+                //right: 50%;
+                //bottom: 50%;
+                //background-color: rgba(0, 0, 0, 0.767);
+                z-index: 2;
+                cursor: pointer;
+                #text{
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    color: rgb(255, 255, 255);
+                    transform: translate(-50%,-40%);
+                    -ms-transform: translate(-50%,-40%);
+                }
+            }
+        }
+    }
+}

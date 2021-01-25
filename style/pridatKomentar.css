@@ -1,0 +1,62 @@
+body {
+  height: 100vh;
+}
+
+main {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 40% 50% 10%;
+      grid-template-rows: 40% 50% 10%;
+}
+
+main #hodnotenieHviezdami {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-size: 25px;
+}
+
+main #hodnotenieHviezdami span {
+  margin-left: 10px;
+}
+
+main #formular form {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 50% 50%;
+      grid-template-rows: 50% 50%;
+  margin-bottom: 50px;
+  row-gap: 15px;
+}
+
+main #formular form button {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  padding: 10px;
+  border-radius: 5px;
+  opacity: .6;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background-color: #FCA14E;
+  color: black;
+  font-family: pixel;
+  font-size: 16px;
+}
+
+main #formular form button:hover {
+  opacity: 1;
+}
+
+main #chybnyInput {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+/*# sourceMappingURL=pridatKomentar.css.map */

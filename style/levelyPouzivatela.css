@@ -1,0 +1,41 @@
+body main {
+  overflow-y: scroll;
+  display: -ms-grid;
+  display: grid;
+  overflow-x: hidden;
+}
+
+body main h1 {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  font-family: pixelBold;
+}
+
+body main #levely {
+  display: -ms-grid;
+  display: grid;
+  grid-column-gap: 10px;
+  grid-row-gap: 15px;
+  -ms-grid-columns: 25% 25% 25% 25%;
+      grid-template-columns: 25% 25% 25% 25%;
+  -ms-grid-rows: 25% 25% 25% 25%;
+      grid-template-rows: 25% 25% 25% 25%;
+}
+
+body main #levely .level {
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -ms-grid-rows: 40% 40% 25%;
+      grid-template-rows: 40% 40% 25%;
+}
+
+body main #levely .zmazatLevel {
+  border-radius: 5px;
+}
+/*# sourceMappingURL=levelyPouzivatela.css.map */
