@@ -1,0 +1,87 @@
+body {
+  height: 100vh;
+}
+
+main {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main #formular {
+  width: 50vw;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+main #formular form {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 25% 45% 30%;
+      grid-template-columns: 25% 45% 30%;
+  -ms-grid-rows: (auto())[6];
+      grid-template-rows: repeat(6, auto());
+  row-gap: 10px;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+}
+
+main #formular form label {
+  font-family: pixel;
+}
+
+main #formular form span {
+  font-size: 14px;
+}
+
+main #formular form #mamUcet {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  grid-column: auto / span 3;
+  font-family: pixel;
+}
+
+main #formular form #mamUcet a {
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+main #formular form input {
+  border-radius: 5px;
+}
+
+main #formular form button {
+  width: 50%;
+  opacity: .7;
+  font-family: pixel;
+  font-size: 20px;
+  background: #CFFFB3;
+  padding: 10px;
+  grid-column: auto / span 3;
+  border-radius: 5px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+main #formular form button:hover {
+  opacity: 1;
+}
+
+main #formular #uspesnaRegistracia {
+  text-align: center;
+}
+/*# sourceMappingURL=registracia.css.map */

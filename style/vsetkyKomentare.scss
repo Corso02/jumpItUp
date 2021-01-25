@@ -1,0 +1,39 @@
+main{
+    height: 80vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: grid;
+    grid-template-rows: 10% 90%;
+    justify-items: center;
+    #filterBox{
+        display: flex;
+        #zobrazenie{
+            align-self: center;
+        }
+        #filter{
+            visibility: hidden;
+            display: flex;
+            align-items: center;
+            margin-left: 35px;
+        }
+    }
+    #komentareBox{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+        row-gap: 5px;
+        column-gap: 5px;
+        .recenzia{
+            margin-left: 10px;
+            border-bottom: 1px solid black;
+          
+           
+            span{
+                margin-right: 5px;
+            }
+            .koment{
+                padding-bottom: 50px;
+            }
+        }
+    }
+}
