@@ -68,10 +68,10 @@ function zistenieMenaPouzivatela(){
     return userName;
 }
 function zobrazeniePrekliku(){
-    document.getElementById("popUpPreklikKomentar").style.display = 'grid';
+    if(window.innerWidth > 800) document.getElementById("popUpPreklikKomentar").style.display = 'grid';
 }
 function skrytiePrekliku(){
-    document.getElementById("popUpPreklikKomentar").style.display = "none";
+    if(window.innerWidth > 800) document.getElementById("popUpPreklikKomentar").style.display = "none";
 }
 
 /*

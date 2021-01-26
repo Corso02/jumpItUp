@@ -11,14 +11,15 @@
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="scripts/jQuery.js"></script>
-     <!-- ikony -->
+     <!-- ikony (hviezdy) -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
      <!-- skripty -->
      <script src="scripts/index.js"></script>
+     <script src="scripts/initialize.js"></script>
 
 </head>
-<body>
+<body onresize="resizeCheck()">
     <?php 
         session_start();
         error_reporting(E_ERROR);
@@ -30,17 +31,27 @@
     <header>
         <a id="about" class="headerBtn">About</a>
         <a id="nazov">Jump it up</a>
-        <a id=<?php if($_SESSION['user']) echo "prihlaseny"; else echo "register"?> class="headerBtn" href=<?php if($_SESSION['user']) echo "#"; else echo "registraciaForm.php";?> 
-            onmouseover=<?php if($_SESSION['user']) echo "zobrazeniePrekliku()"; else echo ""?> onmouseout=<?php if($_SESSION['user']) echo "skrytiePrekliku()"; else echo "";?>>
-            <?php if($_SESSION['user']) echo $_SESSION['user']['nick'];
-                  else echo "Register";
-            ?>
-        </a>
-        <a id='signUp' class="headerBtn" href=<?php if($_SESSION['user']) echo "php/odhlasenie.php"; else echo "prihlasenieForm.php";?> >
-            <?php if($_SESSION['user']) echo "Log out";
-                  else echo "Sign up";
-            ?>
-        </a> 
+        <div id="smallScreen">
+            <div id="headerMenu">
+                <a id=<?php if($_SESSION['user']) echo "prihlaseny"; else echo "register"?> class="headerBtn small" href=<?php if($_SESSION['user']) echo "#"; else echo "registraciaForm.php";?> 
+                    onmouseover=<?php if($_SESSION['user']) echo "zobrazeniePrekliku()"; else echo ""?> onmouseout=<?php if($_SESSION['user']) echo "skrytiePrekliku()"; else echo "";?>>
+                    <?php if($_SESSION['user']) echo $_SESSION['user']['nick'];
+                        else echo "Register";
+                    ?>
+                </a>
+                <!-- 2 prekliky v menu pri malej obrazovke a prihlasenom pouzivatelovi-->
+                <div id="prekliky" style="display: none">
+                    <a href="pridatKomentar.php" class="headerBtn">Pridat komentar</a>
+                    <a href="levelyPouzivatela.php" class="headerBtn">Moje levely</a>
+                </div>
+                <a id='signUp' class="headerBtn small" href=<?php if($_SESSION['user']) echo "php/odhlasenie.php"; else echo "prihlasenieForm.php";?> >
+                    <?php if($_SESSION['user']) echo "Log out";
+                        else echo "Sign up";
+                    ?>
+                </a> 
+            </div>
+            <img src="images/editorOpenCloseBtnBeta.png" id="menuBtn" onclick="openMenu()"/>
+        </div> 
         <div id="popUpPreklikKomentar" onmouseover="zobrazeniePrekliku()" onmouseout="skrytiePrekliku()">
             <a href="pridatKomentar.php">Pridat komentar</a>
             <a href="levelyPouzivatela.php">Moje levely</a>
@@ -89,20 +100,20 @@
         <script src="level2.js"></script>
         <script src="game.js"></script>
         <script src="pohybHraca.js"></script>
-       </div>
+    </div>
 
        <div id="pravyOkraj">
             <?php 
                 require_once "php/connectDb.php";
                 require_once "php/zobrazenieHviezd.php";
-                $sql = "SELECT * FROM comments ORDER BY RAND() LIMIT 3";
+                $sql = "SELECT * FROM comments ORDER BY RAND() LIMIT 1";
                 $stmt = $conn->prepare($sql);
                 $stmt-> execute();
                 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 if(!$result) echo "<p id='ziadneKomentare'>Nie su ziadne komentare :(</p>";
                 //prvy koment
                 else{
-                    echo "<div class='recenzia'>  <p id='nickPouzivatela'> ";
+                   /* echo "<div class='recenzia'>  <p id='nickPouzivatela'> ";
                     echo  $result[0]['nick'] . "</p>";
                     echo vypisanieHviezd($result[0]['stars']) .  "<p class='koment'>" . $result[0]['comment'] . "</p> </div>";
                     //druhy koment
@@ -113,6 +124,12 @@
                     echo "<div class='recenzia'>  <p id='nickPouzivatela'> ";
                     echo  $result[2]['nick'] . "</p>";
                     echo vypisanieHviezd($result[2]['stars']) .  "<p class='koment'>" . $result[2]['comment'] . "</p> </div>";
+                    echo "<a href='vsetkyKomentare.php' id='preklikNaVsetkyRecenzie'>Zobrazit vsetky recenzie</a>";*/
+                    foreach ($result as $res){
+                        echo "<div class='recenzia'>  <p id='nickPouzivatela'> ";
+                        echo  $res['nick'] . "</p>";
+                        echo vypisanieHviezd($res['stars']) .  "<p class='koment'>" . $res['comment'] . "</p> </div>";
+                    }
                     echo "<a href='vsetkyKomentare.php' id='preklikNaVsetkyRecenzie'>Zobrazit vsetky recenzie</a>";
                 }
            ?>

@@ -24,7 +24,7 @@ body{
         #pravyOkraj{
             background-color: #6B717E;
             display: grid;
-            grid-template-rows: 30% 30% 30% 10%;
+            grid-template-columns: 100%;
             color: white;
             #ziadneKomentare{
                 justify-self: center;
@@ -46,10 +46,11 @@ body{
             #preklikNaVsetkyRecenzie{
                 text-decoration: none;
                 justify-self: center;
-                align-self: center;
+                align-self: end;
                 color: black;
                 padding: 5px;
                 border-radius: 5px;
+                margin-bottom: 10px;
             }
             #preklikNaVsetkyRecenzie:hover{
                 background: #CFFFB3;

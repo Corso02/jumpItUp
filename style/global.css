@@ -36,10 +36,64 @@ body header {
   background-color: #FCA14E;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 30% 40% 15% 15%;
-      grid-template-columns: 30% 40% 15% 15%;
+  -ms-grid-columns: 30% 40% 30%;
+      grid-template-columns: 30% 40% 30%;
   position: relative;
   top: 0px;
+}
+
+body header #smallScreen {
+  display: -ms-grid;
+  display: grid;
+}
+
+@media screen and (min-width: 801px) {
+  body header #smallScreen #headerMenu {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 50% 50%;
+        grid-template-columns: 50% 50%;
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  body header #smallScreen #headerMenu {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 30% 40% 30%;
+        grid-template-rows: 30% 40% 30%;
+    width: 0;
+    height: 250px;
+    position: absolute;
+    top: 15vh;
+    right: 0;
+    background-color: #FCA14E;
+  }
+}
+
+@media screen and (min-width: 801px) {
+  body header #smallScreen #menuBtn {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  body header #smallScreen #menuBtn {
+    display: block;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    width: 60px;
+    height: 60px;
+  }
+}
+
+body header #smallScreen #prekliky {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 50% 50%;
+      grid-template-rows: 50% 50%;
+  row-gap: 10px;
 }
 
 body header .headerBtn {
@@ -66,10 +120,35 @@ body header .headerBtn:hover {
 
 body header #nazov {
   color: #271033;
-  font-size: 36px;
   -ms-grid-column-align: center;
       justify-self: center;
-  font-family: pixelBold;
+}
+
+@media screen and (min-width: 630px) {
+  body header #nazov {
+    font-size: 36px;
+    font-family: pixelBold;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  body header #nazov {
+    font-size: 26px;
+    font-family: pixelBold;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+}
+
+@media screen and (max-width: 465px) {
+  body header #nazov {
+    font-size: 22px;
+    font-family: pixel;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
 }
 
 body header a {

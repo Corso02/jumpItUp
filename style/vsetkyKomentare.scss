@@ -20,7 +20,18 @@ main{
     #komentareBox{
         width: 100%;
         display: grid;
-        grid-template-columns: 25% 25% 25% 25%;
+        @media screen and(min-width: 1001px){
+            grid-template-columns: 25% 25% 25% 25%;
+        }
+        @media screen and(max-width: 1000px){
+            grid-template-columns: 33% 33% 34%;
+        }
+        @media screen and(max-width: 750px){
+            grid-template-columns: 50% 50%;
+        }
+        @media screen and(max-width: 450px){
+            grid-template-columns: 100%;
+        }
         row-gap: 5px;
         column-gap: 5px;
         .recenzia{

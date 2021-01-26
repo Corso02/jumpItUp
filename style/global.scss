@@ -22,9 +22,45 @@ body{
         padding: 25px;
         background-color: #FCA14E;
         display: grid;
-        grid-template-columns: 30% 40% 15% 15%;
+        grid-template-columns: 30% 40% 30%;
         position: relative;
         top: 0px;
+        #smallScreen{
+            display: grid;
+            #headerMenu{
+                @media screen and (min-width: 801px){
+                    display: grid;
+                    grid-template-columns: 50% 50%;
+                    width: auto
+                }
+                @media screen and(max-width: 800px) {
+                    display: grid;
+                    grid-template-rows: 30% 40% 30%;
+                    width: 0;
+                    height: 250px;
+                    position: absolute;
+                    top: 15vh;
+                    right: 0;
+                    background-color: #FCA14E;
+                }
+            }
+            #menuBtn{
+                @media screen and (min-width: 801px){
+                    display: none;
+                }
+                @media screen and(max-width: 800px) {
+                    display: block;
+                    justify-self: center;
+                    width: 60px;
+                    height: 60px;
+                }
+            }
+            #prekliky{
+                display: grid;
+                grid-template-rows: 50% 50% ;
+                row-gap: 10px;
+            }
+        }
         .headerBtn{
             color: #271033;
             font-size: 18px;
@@ -41,9 +77,22 @@ body{
         }   
         #nazov{
             color: #271033;
-            font-size: 36px;
+            @media screen and (min-width: 630px){
+                font-size: 36px;
+                font-family: pixelBold;
+            }
+            @media screen and(max-width: 630px){
+                font-size: 26px;
+                font-family: pixelBold;
+                align-self: center;
+            }
+            @media screen and (max-width: 465px){
+                font-size: 22px;
+                font-family: pixel;
+                align-self: center;
+            }
             justify-self: center;
-            font-family: pixelBold;
+            
         }
         a{
             text-decoration: none;

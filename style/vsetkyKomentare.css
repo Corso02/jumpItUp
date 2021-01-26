@@ -36,11 +36,37 @@ main #komentareBox {
   width: 100%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 25% 25% 25% 25%;
-      grid-template-columns: 25% 25% 25% 25%;
   row-gap: 5px;
   -webkit-column-gap: 5px;
           column-gap: 5px;
+}
+
+@media screen and (min-width: 1001px) {
+  main #komentareBox {
+    -ms-grid-columns: 25% 25% 25% 25%;
+        grid-template-columns: 25% 25% 25% 25%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  main #komentareBox {
+    -ms-grid-columns: 33% 33% 34%;
+        grid-template-columns: 33% 33% 34%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  main #komentareBox {
+    -ms-grid-columns: 50% 50%;
+        grid-template-columns: 50% 50%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  main #komentareBox {
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+  }
 }
 
 main #komentareBox .recenzia {

@@ -36,19 +36,34 @@
         }
      ?>
 
-    <header>
+<header>
         <a id="about" class="headerBtn">About</a>
         <a id="nazov" href="index.php">Jump it up</a>
-        <a id="register" class="headerBtn" href=<?php if($_SESSION['user']) echo "#"; else echo "registraciaForm.php";?>>
-            <?php if($_SESSION['user']) echo $_SESSION['user']['nick'];
-                  else echo "Register";
-            ?>
-        </a>
-        <a id='signUp' class="headerBtn" href=<?php if($_SESSION['user']) echo "php/odhlasenie.php"; else echo "prihlasenieForm.php";?> > 
-            <?php if($_SESSION['user']) echo "Log out";
-                  else echo "Sign up";
-            ?>
-        </a> 
+        <div id="smallScreen">
+            <div id="headerMenu">
+                <a id=<?php if($_SESSION['user']) echo "prihlaseny"; else echo "register"?> class="headerBtn small" href=<?php if($_SESSION['user']) echo "#"; else echo "registraciaForm.php";?> 
+                    onmouseover=<?php if($_SESSION['user']) echo "zobrazeniePrekliku()"; else echo ""?> onmouseout=<?php if($_SESSION['user']) echo "skrytiePrekliku()"; else echo "";?>>
+                    <?php if($_SESSION['user']) echo $_SESSION['user']['nick'];
+                        else echo "Register";
+                    ?>
+                </a>
+                <!-- 2 prekliky v menu pri malej obrazovke a prihlasenom pouzivatelovi-->
+                <div id="prekliky" style="display: none">
+                    <a href="pridatKomentar.php" class="headerBtn">Pridat komentar</a>
+                    <a href="levelyPouzivatela.php" class="headerBtn">Moje levely</a>
+                </div>
+                <a id='signUp' class="headerBtn small" href=<?php if($_SESSION['user']) echo "php/odhlasenie.php"; else echo "prihlasenieForm.php";?> >
+                    <?php if($_SESSION['user']) echo "Log out";
+                        else echo "Sign up";
+                    ?>
+                </a> 
+            </div>
+            <img src="images/editorOpenCloseBtnBeta.png" id="menuBtn" onclick="openMenu()"/>
+        </div> 
+        <div id="popUpPreklikKomentar" onmouseover="zobrazeniePrekliku()" onmouseout="skrytiePrekliku()">
+            <a href="pridatKomentar.php">Pridat komentar</a>
+            <a href="levelyPouzivatela.php">Moje levely</a>
+        </div>
     </header>
 
     <div id="popUpPreklikKomentar">
